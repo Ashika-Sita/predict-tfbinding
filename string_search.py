@@ -52,3 +52,7 @@ def write_outfile(motif_dictionary, outfile):
     outfile.close()
 
     return
+
+fasta_files = read_fasta(args.infile)
+searches = search_fasta(fasta_files, args.mfile)
+write_outfile(searches, args.outfile)
