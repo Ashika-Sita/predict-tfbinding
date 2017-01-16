@@ -17,7 +17,7 @@ def search_fasta(string_file, input_iterator):
 
     """takes in fasta iterator and file of motifs;
     searches for motifs and
-    returns dictionary of record:list of tuples of location, sequence for each record"""
+    returns list of ids with motif"""
 
     motif_dictionary = {}
     motif_list = []
@@ -29,7 +29,8 @@ def search_fasta(string_file, input_iterator):
     motif_object.weblogo("./motif_search_outfiles/string_motif.png")
 
     for item in input_iterator:
-
-        motif_list.append(item.id)
+        location_list = [(position, sequence) for position, sequence in motif_object.instances.search((item.seq).upper())]
+        if len(location_list) > 0:
+            motif_list.append(item.id)
 
     return motif_list
