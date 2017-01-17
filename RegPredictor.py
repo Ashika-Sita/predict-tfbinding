@@ -92,15 +92,15 @@ class RegPred(object):
 
         return string_list
 
-    def pssm_search(self, meme_record):
+    def pssm_search(self, input_iterator):
 
         """Searches for PSSM matches above threshold 3.0 in test sequences"""
         """Creates an iterator object over records in the test.fa file
         for use by motif search modules"""
 
-        input_iterator = SeqIO.parse(self.test_fasta, "fasta", alphabet = IUPAC.ambiguous_dna)
+        #input_iterator = SeqIO.parse(self.test_fasta, "fasta", alphabet = IUPAC.ambiguous_dna)
 
-        print "FASTA iterator created"
+        #print "FASTA iterator created"
 
         print "Starting PSSM Search"
 
