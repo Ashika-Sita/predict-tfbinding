@@ -1,2 +1,2 @@
 # predict-tfbinding
-Python implementations of commonly used algorithms to predict TF binding in a DNA sequence
+Python modules to identify novel genes regulated by a TF in a cell type
